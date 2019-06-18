@@ -23,5 +23,6 @@ var subtract = document.getElementById('subtract').value;
 }*/
 
 //Deduct button event listener
-//deduct.addEventListener('click', changeBalance);
 deduct.addEventListener('click', changeBalance);
+//deduct.addEventListener('click', test);
+//click test works (alert pops up); issue lies in changeBalance function?
