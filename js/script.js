@@ -1,28 +1,17 @@
 //Date function
 var today = new Date();
 var date = document.getElementById("date");
-date.innerHTML = "<h2>Week of:</h2>" + today.toDateString();
+date.innerHTML = "<h2>Date:</h2>" + today.toDateString();
 
-//Non-date variables
-var deduct = document.getElementById('deduct');
-
-//Function to subtract purchase from balance
-function changeBalance() {
-  var balance = document.getElementById('balance').value;
-var purchase = document.getElementById('purchase').value;
-var subtract = document.getElementById('subtract').value;
-  var remainder = parseFloat(balance) - parseFloat(subtract);
-  //balance = remainder;
-  
-  if(!isNaN(remainder)) {
-    document.getElementById(result).innerText = "New Balance: " + remainder;
-  }
+//Deduct balance function
+function display(){
+  var deduct = document.getElementById('deduct');
+  var balance = document.getElementById('balance').textContent;
+  var purchase = document.getElementById('purchase').value;
+  var remainder = balance - purchase;
+  var result = document.getElementById('result');
+  result.textContent = "New Balance: $" + remainder;
 }
-/*function test(){
-	alert("Hello world!");
-}*/
 
 //Deduct button event listener
-deduct.addEventListener('click', changeBalance);
-//deduct.addEventListener('click', test);
-//click test works (alert pops up); issue lies in changeBalance function?
+deduct.addEventListener('click', display);
